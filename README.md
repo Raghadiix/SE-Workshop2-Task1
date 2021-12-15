@@ -18,8 +18,10 @@ RESULT:
 <img width="595" alt="Screen Shot 2021-12-15 at 4 34 36 PM" src="https://user-images.githubusercontent.com/96022066/146259703-de06bf9b-724c-489e-9e5b-72e6817a73cb.png">
 
 
-
-
+# problem we faced
+- lables of result not appear in first page (solved.. we put it in next page )
+- connection of travic was'nt build  (solved .. i opened new github account )
+- result was appear only in terminal (solved .. update index.js )
 
 # Prepared By:
 Raghad Adel Alshabana	raaalshabana@sm.imamu.edu.sa
