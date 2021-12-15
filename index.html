@@ -1,64 +1,80 @@
-const express = require('express')
-const app = express();
-var FastText = require('node-fasttext');
-const cors = require('cors');
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Food System</title>
+</head>
 
-let config = { 
-  dim: 100,
-  input: "train.txt",
-  output: "model"
-}
+ <script language="JavaScript">
+ function showInput(){
+ document.getElementById('display').innerHTML=
+ 	document.getElementById("user_input").value;
+ 
+ }
+ </script>
 
+<body style="background-color:rgb(202, 198, 198)" ></body>
 
+</ul>
 
+<style>
 
-FastText.train("supervised", config, function (success, error) {
+    img{
 
-  if(error) {
-    console.log(error)
-    return;
-  }
-  
-  console.log(success)
-  
-})
+    border-radius: 500px;
+    float: right;
+    margin-right: 400px;
+    }
+   
+</style>
 
-app.use(cors())
-
-app.get('/', (req, res) => {
-  res.sendfile("index.html");
-});
-
-app.get('/fasttext/', function(req, res) {
-  var statement = req.param('statement');
-    res.send(getFastTextResults(statement));
-});
-
-function getFastTextResults(statement) {
-	//predict returns an array with the input and predictions for best cateogires
-	var output=null;
-	
-	FastText.predict(
-		"model.bin", 3,
-		[statement],
-		function (success, error) {
-
-		  if(error) {
-			console.log(error)
-			return;
-		  }
-		  output=success
-		  
-		})
-
-
-	return output;
-}
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNIEu81Fj7sdYAL4YNxsf4yu8C_JjvmOo5kg&usqp=CAU" 
 
 
 
-         
+width="300" height="300" >
 
-app.listen(8000, () => {
-  console.log('Listening on port 8000!')
-});
+
+ 
+<center><h1> 
+<br/li><br/li>
+<br/li><br/li>
+    <p style="color:rgb(30, 189, 175);" >            NATURAL FOOD </p>
+</h1></center> 
+   
+    <br/li><br/li>
+    <br/li><br/li>
+
+    <hr/>
+    <hr/>
+</body>
+
+</html> 
+    <form action="/fasttext">
+        <center>    <h2>Enter Food name to clssify it:</h2>  </center>
+
+<center>  <input  type="text" name="statement" id="user_input"> </center>
+
+<br/li><br/li>
+<center>  <input type="Submit" value="Submit" >
+<input type="reset" value="Clear">  </center>
+
+</form> 
+<hr/>
+<hr/>
+
+
+
+
+
+</body>
+
+</html> 
+
+
+
+<br/li><br/li>
+<br/li><br/li>
+<br/li><br/li>
+<br/li><br/li>
+<br/li><br/li>
