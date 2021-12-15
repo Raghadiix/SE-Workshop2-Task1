@@ -54,9 +54,7 @@ function getFastTextResults(statement) {
 
 
 	return output;
-}
-
-
+	}
 
          
 
